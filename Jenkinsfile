@@ -26,6 +26,8 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd myapp
+		echo "Activate virtual environment"
+		. venv/bin/activate
                 python3 hello.py
                 python3 hello.py --name=Brad
                 '''
