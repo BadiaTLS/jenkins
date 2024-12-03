@@ -13,8 +13,10 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-		echo "Activate venv untuk menghindari error environment"
-                source /home/jenkins/venv/bin/activate
+		echo "Membuat virtual environment di dalam direktori proyek"
+                python3 -m venv venv
+                . venv/bin/activate
+		pip install --upgrade pip
                 pip install -r requirements.txt
                 '''
             }
