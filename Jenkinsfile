@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                 cd myapp
 		echo "Activate venv untuk menghindari error environment"
-                . /home/jenkins/venv/bin/activate
+                source /home/jenkins/venv/bin/activate
                 pip install -r requirements.txt
                 '''
             }
